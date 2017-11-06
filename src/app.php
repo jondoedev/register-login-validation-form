@@ -3,31 +3,27 @@
 function app_run($request) {
     $routes = [
         '/' => function () {
-            return [
-                'code' => 200,
-                'headers' => [],
-                'body' => 'home']
-                ;
+            return 'home';
         },
         '/sign-up' => function () {
-            return [
-                'code' => 200,
-                'headers' => [],
-                'body' => 'sign up'
-            ];
+            return 'sign up';
         },
         '/sign-in' => function () {
-            return [
-                'code' => 200,
-                'headers' => [],
-                'body' => 'sign in'
-            ];
+            return 'sign in';
         },
     ];
 
     foreach ($routes as $pattern => $handler) {
         if ($request['url'] == $pattern) {
-            return $handler();
+            $response = $handler();
+            if (is_string($response)) {
+                $response = [
+                    'code' => 200,
+                    'headers' => [],
+                    'body' => $response
+                ];
+            }
+            return $response;
         }
     }
 

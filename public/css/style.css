@@ -1,0 +1,240 @@
+/* RESET START */
+*{
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body{
+  margin: 0;
+  color: #111;
+  font: 400  12px/1 'Poppins', sans-serif;
+  background-color: #f4f6f8;
+}
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+}
+ul, ol{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  color: #111;
+}
+a, a:hover{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+}
+input, textarea, button{
+  outline: none;
+  border: none;
+}
+textarea{
+  resize: vertical;
+}
+button{
+  cursor: pointer;
+}
+label{
+  margin-bottom: 0;
+}
+select, select:hover{
+  color: inherit;
+  background: #fff;
+}
+option, option:hover{
+  color: inherit;
+  background: #fff;
+}
+::-webkit-input-placeholder {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+::-moz-placeholder          {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:-moz-placeholder           {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:-ms-input-placeholder      {transition: all .3s linear;   color: rgba(255, 255, 255, .8);}
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
+/* RESET END */
+
+/* DEFAULT CLASSES START */
+
+/* DEFAULT CLASSES END */
+
+/* DEFAULT COMPONENT START */
+.input-group{
+  position: relative;
+}
+.input-group + .input-group{
+  margin-top: 20px;
+}
+.form-control{
+  width: 100%;
+  border: 1px solid #E83F3D;
+  color: rgba(255, 255, 255, .8);
+  background-color: transparent;
+  height: 50px;
+  border-radius: 30px;
+  padding: 0 20px 0 40px;
+  font-size: 17px;
+  transition: all .2s linear;
+}
+.form-control:focus{
+  box-shadow: 0 0 10px #E83F3D;
+}
+.input-group.icon-on-input label{
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%) ;
+}
+.input-group.icon-on-input label{
+  color: #fff;
+  font-size: 15px;
+}
+.checkbox-group input[type="checkbox"]{
+  display: none;
+}
+.checkbox-group label{
+  color: #fff;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.checkbox-group input[type="checkbox"] + label::before{
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+.checkbox-group input[type="checkbox"]:checked + label::before{
+  content: '\f00c';
+  font-family:'FontAwesome';
+  color: #000;
+}
+.btn{
+  display: inline-block;
+  font-size: 17px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 15px 50px;
+  text-align: center;
+  transition: all .2s linear;
+}
+.btn.full-width{
+  width: 100%;
+}
+
+.btn.half-width{
+  width: 49%;
+  text-align: center;
+}
+
+.btn.btn-default{
+  background-color: rgba(232,63,61, 0.9);
+}
+.btn.btn-default:hover{
+  background-color: #c93535;
+
+  box-shadow: 0 0 10px #E83F3D;
+
+}
+.btn.btn-fb{
+  background-color: #0076c8;
+}
+.btn.btn-fb:hover{
+  box-shadow: 0 3px 10px #0076c8;
+}
+.btn.btn-google{
+  background-color: #dc4a38;
+}
+.btn.btn-google:hover{
+  /* box-shadow: 0 3px 10px #dc4a38; */
+  box-shadow: inset 0 0 20px #000;
+}
+.btn.btn-ic{
+  font-size: 13px;
+  font-weight: 400;
+  padding: 18px 15px;
+}
+.btn.btn-ic .fa{
+  font-size: 15px;
+  margin-right: 13px;
+}
+/* DEFAULT COMPONENT END */
+
+/* CUSTOM STYLE */
+.form-wrapper{
+  background: url('../img/login-bg-960x960.jpg') no-repeat center / cover;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 0;
+  box-shadow: 100vw 0 0 rgba(0,0,0,.6) inset;
+}
+.user-auth-form{
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+.logo{
+  margin-bottom: 45px;
+}
+.checkbox-group{
+  margin-top: 10px;
+  padding-left: 18px;
+}
+.user-auth-form form .btn{
+  margin-top: 50px;
+}
+.other-auth-methods {
+  margin: 50px 0;
+
+}
+.other-auth-methods .btn + .btn{
+  margin-top: 10px;
+}
+
+
+@media (min-width: 480px){
+  .user-auth-form{
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 600px){
+  .user-auth-form{
+    max-width: 480px;
+  }
+}
+
+@media (min-width: 992px){
+  .user-auth-form{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    max-width: 1000px;
+  }
+  .user-auth-form form{
+    flex-basis: 50%;
+  }
+  .other-auth-methods{
+    flex-basis: 50%;
+    margin-top: 0;
+    margin-left:50px;
+  }
+}
+@media (min-width: 1200px){
+  .form-wrapper{
+    background: url('../img/login-bg.jpg') no-repeat center / cover;
+  }
+}

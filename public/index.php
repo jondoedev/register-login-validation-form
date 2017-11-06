@@ -1,21 +1,16 @@
 <?php
 
-$url = $_SERVER['REQUEST_URI'];
+require '../src/app.php';
 
-$routes = [
-    '/' => function () {
-        echo 'home';
-    },
-    '/sign-up' => function () {
-        echo 'sign up';
-    },
-    '/sign-in' => function () {
-        echo 'sign in';
-    },
+$request = [
+    'url' => $_SERVER['REQUEST_URI'],
+    'params' => $_SERVER
 ];
 
-foreach ($routes as $pattern => $handler) {
-    if ($url == $pattern) {
-        $handler();
-    }
+$response = app_run($request);
+
+http_response_code($response['code']);
+foreach ($response['headers'] as $key => $value) {
+    header("$key: $value");
 }
+echo $response['body'];

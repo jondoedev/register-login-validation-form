@@ -2,6 +2,7 @@
 namespace App;
 
 use App\Models\Country;
+use App\Models\User;
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 class App {
@@ -26,21 +27,25 @@ class App {
 
     public static function run($request) {
         $routes = [
-            '/' => function () {
+            '/' => function ($request) {
                 return App::render('main');
 
             },
-            '/sign-up' => function () {
+            '/sign-up' => function ($request) {
+                if ($request['info']['REQUEST_METHOD'] == 'POST') {
+//                    User::create($request['params']);
+                    var_dump($request['params']);
+                }
                 return App::render('signup', ['countries' => Country::all()]);
             },
-            '/sign-in' => function () {
+            '/sign-in' => function ($request) {
                 return App::render('signin');
             },
         ];
 
         foreach ($routes as $pattern => $handler) {
             if ($request['url'] == $pattern) {
-                $response = $handler();
+                $response = $handler($request);
                 if (is_string($response)) {
                     $response = [
                         'code' => 200,

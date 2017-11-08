@@ -7,7 +7,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $request = [
     'url' => $_SERVER['REQUEST_URI'],
-    'params' => $_SERVER
+    'info' => $_SERVER,
+    'params' => $_REQUEST
 ];
 App\App::init();
 $response = App\App::run($request);

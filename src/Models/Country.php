@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
-class Country {
+use Illuminate\Database\Eloquent\Model;
+
+class Country extends Model {
 
 }

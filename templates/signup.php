@@ -31,7 +31,13 @@
             <div class='form-group'>
                 <label>Country </label>
                 <!-- TODO: select -->
-                <input type='text' class="form-control" name='country' />
+                <select name="country_id" class="form-control">
+                    <?php foreach ($countries as $country) { ?>
+                        <option value="<?= $country->id ?>">
+                            <?= $country->name ?>O
+                        </option>
+                    <?php } ?>
+                </select>
             </div>
 
             <div class="form-group">

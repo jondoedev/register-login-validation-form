@@ -6,8 +6,7 @@ $request = [
     'url' => $_SERVER['REQUEST_URI'],
     'params' => $_SERVER
 ];
-$response = App::run($request);
-
+$response = App\App::run($request);
 http_response_code($response['code']);
 foreach ($response['headers'] as $key => $value) {
     header("$key: $value");

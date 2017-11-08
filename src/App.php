@@ -38,8 +38,9 @@ class App {
     }
 
 
-    public static function render($path){
+    public static function render($path, $params=[]){
         ob_start();
+        extract($params);
         require_once __DIR__."/../templates/$path.php";
         $output = ob_get_clean();
         return $output;

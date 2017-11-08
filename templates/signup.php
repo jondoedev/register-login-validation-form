@@ -1,65 +1,52 @@
-<!DOCTYPE html>
-<html>
+<?php require_once __DIR__ . '/_header.php'; ?>
 
-<head>
-  <title>Register</title>
-  <!--<link href='style.css' rel='stylesheet' type='text/css'> -->
-</head>
+<form method='post' class='reg-form'>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class='form-group'>
+                <label>Email: </label>
+                <input type='email' class="form-control" name='email' />
+            </div>
 
-<body>
+            <div class='form-group'>
+                <label>Login: </label>
+                <input type='text' class="form-control" name='login' />
+            </div>
 
-	<form method='post' class='reg-form'>
+            <div class='form-group'>
+                <label>Real Name: </label>
+                <input type='text' class="form-control" name='name' />
+            </div>
 
-        <div class='form-row'>
-            <label for='form_fname'>Email: </label>
-            <input type='email' id='form_email' name='email'>
+            <div class='form-group'>
+                <label>Password: </label>
+                <input type='password' class="form-control" name='password' />
+            </div>
+
+            <div class='form-group'>
+                <label>Birth Date: </label>
+                <input type='text' class="form-control" name='birthdate' />
+            </div>
+
+            <div class='form-group'>
+                <label>Country </label>
+                <!-- TODO: select -->
+                <input type='text' class="form-control" name='country' />
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="agree" />
+                    Agree with terms and conditions
+                </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value='Sign up' />
+            </div>
+
         </div>
+    </div>
+</form>
 
-        <div class='form-row'>
-            <label for='form_login'>Login: </label>
-            <input type='text' id='form_login' name='login'>
-        </div>
-
-        <div class='form-row'>
-            <label for='form_name'>Real Name: </label>
-            <input type='text' id='form_name' name='real_name'>
-        </div>
-
-
-        <div class='form-row'>
-            <label for='form_password'>Password: </label>
-            <input type='password' id='form_password' name='password'>
-        </div>
-
-        <div class='form-row'>
-            <label for='form_bithdate'>Birth Date: </label>
-            <input type='text' id='form_bithdate' name='birthdate'>
-        </div>
-        <!--#########################################################-->
-
-        <div class='form-row'>
-            <label for='form_country'>Country </label>
-            <input type='text' id='form_country' name='Country'>
-        </div>
-
-
-        <div class="checkbox-group">
-            <input type="checkbox" name="remember" id="remember">
-            <label for="remember">Agree with terms and conditions</label>
-        </div>
-
-
-        <div class="form-row">
-			<input type="submit" value='GO!'>
-		</div>
-
-	</form>
-
-
-
-
-
-
-</body>
-
-</html>
+<?php require_once __DIR__ . '/_footer.php'; ?>

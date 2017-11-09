@@ -54,8 +54,7 @@ class App
                     if (!$errors) {
                         $user = User::create($clean_params);
                         $_SESSION['user'] = $user;
-                        return App::render('main');
-                        // TODO redirect to home page
+                        return App::redirect('/');
                     }
                 }
                 return App::render('signup', [
@@ -78,8 +77,7 @@ class App
 
                         if ($user) {
                             $_SESSION['user'] = $user;
-                            // TODO: redirect to main
-                            return 'logged in';
+                            return App::redirect('/');
                         } else {
                             $error = true;
                         }
@@ -92,7 +90,7 @@ class App
             },
             '/sign-out' => function ($request) {
                 unset($_SESSION['user']);
-                return 'signed out';
+                return App::redirect('/');
 
             },
         ];
@@ -114,7 +112,7 @@ class App
         return [
             'code' => 404,
             'headers' => [],
-            'body' => 'PAGE NOT FOUND'
+            'body' => 'PAGE NOT FOUND' //TODO: App::render('404');
         ];
 
     }
@@ -154,5 +152,13 @@ class App
         } else {
             return [$clean_params, []];
         }
+    }
+
+    public static function redirect($url){
+        return [
+            'code' => 302,
+            'headers' => ['Location' => $url],
+        ];
+
     }
 }

@@ -5,7 +5,8 @@
         <div class="col-sm-6 col-sm-offset-3">
             <div class='form-group <?= isset($errors['email']) ? 'has-error' : ''; ?>'>
                 <label>Email: </label>
-                <input type='email' class="form-control" name='email'/>
+                <input type='email' class="form-control" name='email'
+                       value="<?= isset($params['email']) ? $params['email'] : '' ?>"/>
                 <?php if (isset($errors['email'])) { ?>
                     <span class="help-block"><?= $errors['email']; ?></span>
                 <?php } ?>
@@ -13,7 +14,8 @@
 
             <div class='form-group <?= isset($errors['login']) ? 'has-error' : '' ?>'>
                 <label>Login: </label>
-                <input type='text' class="form-control" name='login'/>
+                <input type='text' class="form-control" name='login'
+                       value="<?= isset($params['login']) ? $params['login'] : '' ?>"/>
                 <?php if (isset($errors['login'])) { ?>
                     <span class="help-block"><?= $errors['login'] ?></span>
                 <?php } ?>
@@ -21,7 +23,8 @@
 
             <div class='form-group <?= isset($errors['name']) ? 'has-error' : '' ?>'>
                 <label>Real Name: </label>
-                <input type='text' class="form-control" name='name'/>
+                <input type='text' class="form-control" name='name'
+                       value="<?= isset($params['name']) ? $params['name'] : '' ?>"/>
                 <?php if (isset($errors['name'])) { ?>
                     <span class="help-block"><?= $errors['name'] ?></span>
                 <?php } ?>
@@ -29,7 +32,8 @@
 
             <div class='form-group <?= isset($errors['password']) ? 'has-error' : '' ?>'>
                 <label>Password: </label>
-                <input type='password' class="form-control" name='password'/>
+                <input type='password' class="form-control" name='password'
+                       value="<?= isset($params['password']) ? $params['password'] : '' ?>"/>
                 <?php if (isset($errors['password'])) { ?>
                     <span class="help-block"><?= $errors['password'] ?></span>
                 <?php } ?>
@@ -37,7 +41,8 @@
 
             <div class='form-group <?= isset($errors['password2']) ? 'has-error' : '' ?>'>
                 <label>Confirm Password: </label>
-                <input type='password' class="form-control" name='password2'/>
+                <input type='password' class="form-control" name='password2'
+                        value="<?= isset($params['password2']) ? $params['password2'] : '' ?>"/>
                 <?php if (isset($errors['password2'])) { ?>
                     <span class="help-block"><?= $errors['password2'] ?></span>
                 <?php } ?>
@@ -46,7 +51,8 @@
 
             <div class='form-group <?= isset($errors['birthdate']) ? 'has-error' : '' ?>'>
                 <label>Birth Date: </label>
-                <input type='text' class="form-control" name='birthdate'/>
+                <input type='text' class="form-control" name='birthdate'
+                        value="<?= isset($params['birthdate']) ? $params['birthdate'] : '' ?>"/>
                 <?php if (isset($errors['birthdate'])) { ?>
                     <span class="help-block"><?= $errors['birthdate'] ?></span>
                 <?php } ?>

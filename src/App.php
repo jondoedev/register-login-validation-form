@@ -51,14 +51,14 @@ class App
                     $errors = App::validate($request['params'], $rules);
 
                     if (!$errors) {
-                        return 'TODO create user';
-//                        User::create($request['params']);
+                        User::create($request['params']);
                         // TODO redirect to home page
                     }
                 }
                 return App::render('signup', [
                     'countries' => Country::all(),
-                    'errors' => $errors
+                    'errors' => $errors,
+                    'params'  => $request['params'],
                 ]);
             },
             '/sign-in' => function ($request) {

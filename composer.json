@@ -1,6 +1,8 @@
 {
   "require": {
-    "illuminate/database": "4.2.*"
+    "illuminate/database": "4.2.*",
+    "rakit/validation": "^0.13.1"
+
   },
   "autoload": {
     "psr-4": {

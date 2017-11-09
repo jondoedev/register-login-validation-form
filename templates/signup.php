@@ -32,8 +32,7 @@
 
             <div class='form-group <?= isset($errors['password']) ? 'has-error' : '' ?>'>
                 <label>Password: </label>
-                <input type='password' class="form-control" name='password'
-                       value="<?= isset($params['password']) ? $params['password'] : '' ?>"/>
+                <input type='password' class="form-control" name='password'/>
                 <?php if (isset($errors['password'])) { ?>
                     <span class="help-block"><?= $errors['password'] ?></span>
                 <?php } ?>
@@ -41,8 +40,7 @@
 
             <div class='form-group <?= isset($errors['password2']) ? 'has-error' : '' ?>'>
                 <label>Confirm password: </label>
-                <input type='password' class="form-control" name='password2'
-                       value="<?= isset($params['password2']) ? $params['password2'] : '' ?>"/>
+                <input type='password' class="form-control" name='password2'/>
                 <?php if (isset($errors['password2'])) { ?>
                     <span class="help-block"><?= $errors['password2'] ?></span>
                 <?php } ?>

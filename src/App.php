@@ -107,7 +107,7 @@ class App
         ];
 
         foreach ($routes as $pattern => $handler) {
-            if ($request['url'] == $pattern) {
+            if ($request['url'] == self::url($pattern)) {
                 $response = $handler($request);
                 if (is_string($response)) {
                     $response = [

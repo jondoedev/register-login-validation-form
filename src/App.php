@@ -44,12 +44,18 @@ class App
                     'login' => 'required|min:6',
                     'password' => 'required|min:6',
                     'password2' => 'required|same:password',
+                    'country_id' => 'required',
                     'agree' => 'required',
                 ];
                 // TODO: validate country_id
 
                 if ($request['info']['REQUEST_METHOD'] == 'POST') {
                     list($clean_params, $errors) = App::validate($request['params'], $rules, ['password2', 'agree']);
+
+                    /* validate DB fields */
+                    if (User::where('login', $clean_params['login'])->count()) { $errors['login'] = 'Login must be unique'; }
+                    if (User::where('email', $clean_params['email'])->count()) { $errors['email'] = 'Email must be unique'; }
+                    if (Country::where('id', $clean_params['country_id'])->count() == 0) { $errors['country_id'] = 'Incorrect country'; }
 
                     if (!$errors) {
                         $user = User::create($clean_params);

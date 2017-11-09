@@ -48,10 +48,11 @@ class App
                 // TODO: validate country_id
 
                 if ($request['info']['REQUEST_METHOD'] == 'POST') {
-                    $errors = App::validate($request['params'], $rules);
+                    list($clean_params, $errors) = App::validate($request['params'], $rules, ['password2', 'agree']);
 
                     if (!$errors) {
-                        User::create($request['params']);
+                        User::create($clean_params);
+                        return 'User Created';
                         // TODO redirect to home page
                     }
                 }
@@ -98,8 +99,15 @@ class App
         return $output;
     }
 
-    public static function validate($params, $rules)
+    public static function validate($params, $rules, $exclude_params)
     {
+        $clean_params = [];
+        foreach ($params as $key => $value) {
+            if (!in_array($key, $exclude_params)){
+                $clean_params[$key] = $value;
+            }
+        }
+
         $validator = new Validator;
         $validation = $validator->make($params, $rules);
         $validation->validate();
@@ -110,9 +118,9 @@ class App
             foreach ($errors as $key => $value) {
                 $flat_errors[$key] = array_values($value)[0];
             }
-            return $flat_errors;
+            return [$clean_params, $flat_errors];
         } else {
-            return [];
+            return [$clean_params, []];
         }
     }
 }

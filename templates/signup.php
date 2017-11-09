@@ -40,14 +40,13 @@
             </div>
 
             <div class='form-group <?= isset($errors['password2']) ? 'has-error' : '' ?>'>
-                <label>Confirm Password: </label>
+                <label>Confirm password: </label>
                 <input type='password' class="form-control" name='password2'
-                        value="<?= isset($params['password2']) ? $params['password2'] : '' ?>"/>
+                       value="<?= isset($params['password2']) ? $params['password2'] : '' ?>"/>
                 <?php if (isset($errors['password2'])) { ?>
                     <span class="help-block"><?= $errors['password2'] ?></span>
                 <?php } ?>
             </div>
-
 
             <div class='form-group <?= isset($errors['birthdate']) ? 'has-error' : '' ?>'>
                 <label>Birth Date: </label>
@@ -74,7 +73,7 @@
 
             <div class='form-group <?= isset($errors['agree']) ? 'has-error' : '' ?>'>
                 <label>
-                    <input type="checkbox" name='agree'/>
+                    <input type="checkbox" name='agree' <?= isset($params['agree']) ? 'checked' : '' ?>/>
                     Agree with terms and conditions
                 </label>
                 <?php if (isset($errors['agree'])) { ?>

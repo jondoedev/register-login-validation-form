@@ -31,6 +31,10 @@ class App
         date_default_timezone_set('UTC');
     }
 
+    public static function url($relative_url) {
+        return self::$config['base_url'] . $relative_url;
+    }
+
     public static function run($request)
     {
         $routes = [
@@ -161,11 +165,10 @@ class App
         }
     }
 
-    public static function redirect($url){
+    public static function redirect($relative_url){
         return [
             'code' => 302,
-            'headers' => ['Location' => $url],
+            'headers' => ['Location' => self::url($relative_url)],
         ];
-
     }
 }

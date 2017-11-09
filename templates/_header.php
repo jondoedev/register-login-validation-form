@@ -11,10 +11,10 @@
     <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet"> -->
 
     <!-- Fontawesome -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="<?= App\App::url('/css/main.css') ?>">
 <!--    <link rel="stylesheet" href="/css/style.css">-->
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= App\App::url('/css/font-awesome.min.css') ?>">
+    <link rel="stylesheet" href="<?= App\App::url('/css/bootstrap.min.css') ?>">
 
 
     <!-- Style -->
@@ -32,16 +32,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="img/logo.png" style="max-height: 100%"></a>
+                <a class="navbar-brand" href="<?= App\App::url('/') ?>"><img src="img/logo.png" style="max-height: 100%"></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right" style="margin-top: 25px;">
                     <?php /*if ($current_user): */?>
-                        <li><a href="/sign-out">Sign Out</a></li>
+                        <li><a href="<?= App\App::url('/sign-out') ?>">Sign Out</a></li>
                     <?php /*else:*/ ?>
-                        <li><a href="/sign-in">Sign In</a></li>
-                        <li><a href="/sign-up">Register</a></li>
+                        <li><a href="<?= App\App::url('/sign-in') ?>">Sign In</a></li>
+                        <li><a href="<?= App\App::url('/sign-up') ?>">Register</a></li>
                     <?php /*endif;*/ ?>
                 </ul>
             </div>

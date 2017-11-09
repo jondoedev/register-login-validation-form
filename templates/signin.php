@@ -33,7 +33,7 @@
                     </div>
 
                     <p>
-                        Don't have an account? <a href="/sign-up">Sign Up</a>
+                        Don't have an account? <a href="<?= App\App::url('sign-up') ?>"">Sign Up</a>
                     </p>
 
                 </form>

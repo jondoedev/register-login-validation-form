@@ -11,6 +11,7 @@ class App
 {
     public static function init()
     {
+        session_start();
         // init Eloquent ORM
         $capsule = new Capsule;
         // TODO: dont hardcode credentials
@@ -51,7 +52,8 @@ class App
                     list($clean_params, $errors) = App::validate($request['params'], $rules, ['password2', 'agree']);
 
                     if (!$errors) {
-                        User::create($clean_params);
+                        $user = User::create($clean_params);
+                        $_SESSION['user'] = $user;
                         return 'User Created';
                         // TODO redirect to home page
                     }
@@ -93,6 +95,8 @@ class App
     public static function render($path, $params = [])
     {
         ob_start();
+        $params['current_user'] = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+
         extract($params);
         require_once __DIR__ . "/../templates/$path.php";
         $output = ob_get_clean();

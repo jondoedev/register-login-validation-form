@@ -67,6 +67,11 @@ class App
             '/sign-in' => function ($request) {
                 return App::render('signin');
             },
+            '/sign-out' => function ($request) {
+                unset($_SESSION['user']);
+                return 'signed out';
+
+            },
         ];
 
         foreach ($routes as $pattern => $handler) {

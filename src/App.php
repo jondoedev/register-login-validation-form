@@ -9,22 +9,23 @@ use Rakit\Validation\Validator;
 
 class App
 {
+    public static $config;
+
     public static function init()
     {
         session_start();
+
+        self::$config = require_once(__DIR__.'/../config.php');
+
         // init Eloquent ORM
         $capsule = new Capsule;
         // TODO: dont hardcode credentials
         $capsule->addConnection([
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'database' => 'db_codeit_test',
-            'username' => 'root',
-            'password' => '3452',
             'charset' => 'utf8',
             'collation' => 'utf8_general_ci',
             'prefix' => ''
-        ]);
+        ] + self::$config['db']);
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
         date_default_timezone_set('UTC');

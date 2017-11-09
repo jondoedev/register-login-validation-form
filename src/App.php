@@ -54,7 +54,7 @@ class App
                     if (!$errors) {
                         $user = User::create($clean_params);
                         $_SESSION['user'] = $user;
-                        return 'User Created';
+                        return App::render('main');
                         // TODO redirect to home page
                     }
                 }
@@ -65,7 +65,30 @@ class App
                 ]);
             },
             '/sign-in' => function ($request) {
-                return App::render('signin');
+                $error = false;
+                if ($request['info']['REQUEST_METHOD'] == 'POST') {
+                    if (isset($request['params']['login']) && isset($request['params']['password']))  {
+                        $login = $request['params']['login'];
+                        $password = $request['params']['password'];
+
+                        $user = User::where('login', $login)->where('password', $password)->first();
+                        if (!$user) {
+                            $user = User::where('email', $login)->where('password', $password)->first();
+                        }
+
+                        if ($user) {
+                            $_SESSION['user'] = $user;
+                            // TODO: redirect to main
+                            return 'logged in';
+                        } else {
+                            $error = true;
+                        }
+                    } else {
+                        $error = True;
+                    }
+                }
+                return App::render('signin', ['error' => $error]);
+
             },
             '/sign-out' => function ($request) {
                 unset($_SESSION['user']);
@@ -90,8 +113,8 @@ class App
 
         return [
             'code' => 404,
-            'headers' => ['ololo' => 'trololo'],
-            'body' => ''
+            'headers' => [],
+            'body' => 'PAGE NOT FOUND'
         ];
 
     }

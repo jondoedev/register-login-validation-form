@@ -7,15 +7,20 @@
                     <img src="/img/logo.png" alt="">
                 </a>
             </div>
+
+            <?php if ($error){ ?>
+                <div class="alert alert-danger">Invalid login or password</div>
+            <?php } ?>
+
             <div class="user-auth-form">
-                <form>
+                <form method="post">
                     <div class="input-group icon-on-input">
                         <label for="userName"><i class="fa fa-user"></i></label>
-                        <input type="text" name="userName" id="userName" class="form-control" placeholder="Username">
+                        <input type="text" name="login" id="login" class="form-control" placeholder="Login or email">
                     </div>
                     <div class="input-group icon-on-input">
                         <label for="userPassword"><i class="fa fa-lock"></i></label>
-                        <input type="password" name="userPassword" id="userPassword" class="form-control"
+                        <input type="password" name="password" id="password" class="form-control"
                                placeholder="Password">
                     </div>
                     <div class="checkbox-group">
@@ -23,8 +28,13 @@
                         <label for="remember">Remember Me</label>
                     </div>
 
-                    <button type="submit" class="btn btn-default half-width"><a href="/sign-in">Sign In</a></button>
-                    <button type="submit" class="btn btn-default half-width"><a href="/sign-up">Sign Up</a></button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default half-width">Sign In</button>
+                    </div>
+
+                    <p>
+                        Don't have an account? <a href="/sign-up">Sign Up</a>
+                    </p>
 
                 </form>
             </div>

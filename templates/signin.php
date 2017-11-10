@@ -25,7 +25,7 @@
                     </div>
 
                     <p class="message">
-                        Don't have an account?</br> <a href="<?= App\App::url('sign-up') ?>"">Sign Up</a>
+                        Don't have an account?</br> <a href="<?= App\App::url('sign-up') ?>">Sign Up</a>
                     </p>
                 </form>
             </div>

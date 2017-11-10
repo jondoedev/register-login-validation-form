@@ -8,33 +8,25 @@
             </div>
 
             <?php if ($error){ ?>
-                <div class="alert alert-danger">Invalid login or password</div>
+                <div class="alert alert-danger sign-in-error">Invalid login or password</div>
             <?php } ?>
 
-            <div class="user-auth-form icon-on-input">
+            <div class="form-group" style="max-width: 27%;margin-top: 2%;">
                 <form method="post">
-                    <div class="input-group icon-on-input">
-                        <label for="userName"><i class="fa fa-user"></i></label>
+                    <div class="form-group">
                         <input type="text" name="login" id="login" class="form-control" placeholder="Login or email">
                     </div>
-                    <div class="input-group icon-on-input">
-                        <label for="userPassword"><i class="fa fa-lock"></i></label>
+                    <div class="form-group">
                         <input type="password" name="password" id="password" class="form-control"
                                placeholder="Password">
                     </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" name="remember" id="remember" checked>
-                        <label for="remember">Remember Me</label>
-                    </div>
-
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary col-md-offset-1">Sign In</button>
+                        <button type="submit" class="btn btn-primary sign-in-btn">Sign In</button>
                     </div>
 
-                    <p>
-                        Don't have an account? <a href="<?= App\App::url('sign-up') ?>"">Sign Up</a>
+                    <p class="message">
+                        Don't have an account?</br> <a href="<?= App\App::url('sign-up') ?>"">Sign Up</a>
                     </p>
-
                 </form>
             </div>
         </div>

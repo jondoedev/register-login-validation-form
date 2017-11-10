@@ -8,3 +8,18 @@
     background-size: cover;
     box-shadow: 0px 0 10px rgba(0,0,0,0.7);
 }
+
+.sign-in-error{
+    max-width: 27%;
+    margin-top: 2%;
+    text-align: center;
+    padding: 1%;
+}
+
+.message{
+    text-align: center;
+}
+
+.sign-in-btn{
+    margin-left: 29%;
+}

@@ -19,7 +19,6 @@ class App
 
         // init Eloquent ORM
         $capsule = new Capsule;
-        // TODO: dont hardcode credentials
         $capsule->addConnection([
             'driver' => 'mysql',
             'charset' => 'utf8',
@@ -52,8 +51,6 @@ class App
                     'country_id' => 'required',
                     'agree' => 'required',
                 ];
-                // TODO: validate country_id
-
                 if ($request['info']['REQUEST_METHOD'] == 'POST') {
                     list($clean_params, $errors) = App::validate($request['params'], $rules, ['password2', 'agree']);
 

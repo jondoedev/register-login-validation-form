@@ -1,6 +1,5 @@
 <?php require_once __DIR__ . '/_header.php'; ?>
-
-    <div class="col-md-offset-5">
+    <div class="col-md-offset-5 margin_15">
         <div class="form-wrapper">
             <div class="logo">
                 <a href="">
@@ -12,7 +11,7 @@
                 <div class="alert alert-danger">Invalid login or password</div>
             <?php } ?>
 
-            <div class="user-auth-form">
+            <div class="user-auth-form icon-on-input">
                 <form method="post">
                     <div class="input-group icon-on-input">
                         <label for="userName"><i class="fa fa-user"></i></label>

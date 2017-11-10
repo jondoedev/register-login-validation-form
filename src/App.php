@@ -123,7 +123,8 @@ class App
         return [
             'code' => 404,
             'headers' => [],
-            'body' => 'PAGE NOT FOUND' //TODO: App::render('404');
+            'body' => App::render('404')
+
         ];
 
     }

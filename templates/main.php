@@ -1,6 +1,11 @@
 <?php require_once __DIR__ . '/_header.php'; ?>
 
-    <div class="col-md-offset-5">
+    <div class="col-md-offset-5 margin_15">
+        <div class="logo">
+            <a href="">
+                <img src="/img/logo.png" alt="">
+            </a>
+        </div>
         <?php if ($current_user): ?>
             <h3>Hello, <?= $current_user->name; ?></h3>
             <li><a href="<?= App\App::url('/sign-out') ?>">Sign Out</a></li>

@@ -48,7 +48,7 @@
 
             <div class='form-group <?= isset($errors['birthdate']) ? 'has-error' : '' ?>'>
                 <label>Birth Date: </label>
-                <input type='text' class="form-control" name='birthdate'
+                <input type='date' class="form-control" name='birthdate'
                         value="<?= isset($params['birthdate']) ? $params['birthdate'] : '' ?>"/>
                 <?php if (isset($errors['birthdate'])) { ?>
                     <span class="help-block"><?= $errors['birthdate'] ?></span>
@@ -79,7 +79,7 @@
                 <?php } ?>
             </div>
 
-            <div class="form-group">
+            <div class="form-group col-md-offset-5">
                 <input type="submit" class="btn btn-primary" value='Sign up'/>
             </div>
 

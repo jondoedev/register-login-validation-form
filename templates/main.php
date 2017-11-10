@@ -8,7 +8,9 @@
         </div>
         <?php if ($current_user): ?>
             <h3>Hello, <?= $current_user->name; ?></h3>
-            <li><a href="<?= App\App::url('/sign-out') ?>">Sign Out</a></li>
+            <a href="<?= App\App::url('/sign-out') ?>">
+                    <button type="submit" class="btn btn-primary col-md-offset-1">Sign Out</button>
+                </a>
         <?php else: ?>
             <h3>Hello, Guest</h3>
             <a class="btn btn-primary" href="<?= App\App::url('/sign-in') ?>">Sign In</a>

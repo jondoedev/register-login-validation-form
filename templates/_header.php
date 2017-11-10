@@ -22,7 +22,7 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-default" style="height: 100px;">
+    <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header" style="margin-top: 25px;">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -35,12 +35,18 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" style="margin-top: 25px;">
+                <ul class="nav navbar-nav navbar-right" style="margin-top: 15px;">
                     <?php if ($current_user): ?>
-                        <li><a href="<?= App\App::url('/sign-out') ?>">Sign Out</a></li>
+                        <li><a href="<?= App\App::url('/sign-out') ?>">
+                                <button type="submit" class="btn btn-primary col-md-offset-1">Sign Out</button>
+                            </a></li>
                     <?php else: ?>
-                        <li><a href="<?= App\App::url('/sign-in') ?>">Sign In</a></li>
-                        <li><a href="<?= App\App::url('/sign-up') ?>">Register</a></li>
+                        <li><a href="<?= App\App::url('/sign-in') ?>">
+                                <button type="submit" class="btn btn-primary col-md-offset-1">Sign In</button>
+                            </a></li>
+                        <li><a href="<?= App\App::url('/sign-up') ?>">
+                                <button type="submit" class="btn btn-primary col-md-offset-1">Register</button>
+                            </a></li>
                     <?php endif; ?>
                 </ul>
             </div>

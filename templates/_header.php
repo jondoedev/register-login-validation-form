@@ -36,12 +36,12 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right" style="margin-top: 25px;">
-                    <?php /*if ($current_user): */?>
+                    <?php if ($current_user): ?>
                         <li><a href="<?= App\App::url('/sign-out') ?>">Sign Out</a></li>
-                    <?php /*else:*/ ?>
+                    <?php else: ?>
                         <li><a href="<?= App\App::url('/sign-in') ?>">Sign In</a></li>
                         <li><a href="<?= App\App::url('/sign-up') ?>">Register</a></li>
-                    <?php /*endif;*/ ?>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>

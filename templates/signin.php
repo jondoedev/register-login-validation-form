@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-default half-width">Sign In</button>
+                        <button type="submit" class="btn btn-primary col-md-offset-1">Sign In</button>
                     </div>
 
                     <p>
